@@ -30,8 +30,9 @@ header {
 
 
 #logo {
-    width: 3%;
-    height: 4rem;
+    width: 50px;
+    height: 45px;
+    margin-left: 1%;
 }
 
 .container {
@@ -48,6 +49,7 @@ header {
     margin-top: 10%;
     height: 30rem;
     border-radius: 4px;
+    box-shadow: 6px 7px 15px 1px rgba(0,0,0,0.63)
 }
 
 h1 {
@@ -59,9 +61,13 @@ p {
     margin: 1rem;
 }
 
-img {
-    margin-left: 1%;
+@media screen and (max-width: 790px) {
+    #mainTitle {
+        width: auto;
+        margin-right: 0;
+    }
 }
+
 
 
 
