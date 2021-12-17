@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
 html {
     font-size: 62.5%;
 }
@@ -8,6 +9,7 @@ body {
     color: white;
     font-size: 1.6rem;
     background: #F8F8FF;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 header {
@@ -65,6 +67,12 @@ p {
     #mainTitle {
         width: auto;
         margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    #cityInfo {
+        font-size: 1.4rem;
     }
 }
 
