@@ -1,7 +1,12 @@
+const begin = document.getElementById('begin');
+begin.innerHTML = "Veuillez entrez un nom de ville dans le champ de recherche en haut à droite";
 let city;
-let inputCity = document.getElementById('searchCity');
+const inputCity = document.getElementById('searchCity');
 inputCity.addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {
+        let cityInfo = document.getElementById('cityInfo');
+        cityInfo.style.height = "auto";
+        begin.style.display = "none";
         city = document.getElementById('searchCity').value;
         let urlRequest = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=44c20dd509e8eacb5ee1747132679982&units=metric&lang=fr";
 
@@ -9,11 +14,15 @@ inputCity.addEventListener('keypress', (e) => {
 
             .then(response => response.json())
             .then(response => {
+                console.log(response)
                 //response.main = an objet of API, this object contane temp_max, temp_min, temp, feels_like, pressure.
                 let temperature = response.main;
 
                 //response.weather contain the clarity of the sky.
                 let sky = response.weather;
+
+                //response.wind contain the speed of the wind.
+                let wind = response.wind;
 
                 let titleCity = document.getElementById('titleCity');
                 titleCity.innerHTML = `${city[0].toUpperCase()}${city.slice(1)}:`;
@@ -42,6 +51,8 @@ inputCity.addEventListener('keypress', (e) => {
                 let cielP = document.getElementById('ciel');
                 cielP.innerHTML = `Ciel: ${sky[0].description}`
 
+                let speedWind = document.getElementById('windSpeed');
+                speedWind.innerHTML = `Vitesse du vent: ${wind.speed} km/h`;
                 titleCity.style.color = "white";
 
             })
