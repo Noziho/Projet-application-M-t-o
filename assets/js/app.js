@@ -67,3 +67,5 @@ inputCity.addEventListener('keypress', (e) => {
 })
 
 
+
+
