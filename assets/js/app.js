@@ -1,12 +1,11 @@
-const begin = document.getElementById('begin');
-begin.innerHTML = "Veuillez entrez un nom de ville dans le champ de recherche en haut à droite";
+const begin = $('#begin');
+begin.html("Veuillez entrez un nom de ville dans le champ de recherche en haut à droite");
 let city;
-const inputCity = document.getElementById('searchCity');
-inputCity.addEventListener('keypress', (e) => {
+$('#searchCity').keypress ((e) => {
     if (e.key === 'Enter') {
         let cityInfo = document.getElementById('cityInfo');
         cityInfo.style.height = "auto";
-        begin.style.display = "none";
+        begin.css('display' , "none");
         city = document.getElementById('searchCity').value;
         let urlRequest = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=44c20dd509e8eacb5ee1747132679982&units=metric&lang=fr";
 
@@ -65,7 +64,3 @@ inputCity.addEventListener('keypress', (e) => {
 
 
 })
-
-
-
-
